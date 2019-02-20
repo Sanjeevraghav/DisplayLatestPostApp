@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">URL</th>
+    <th scope="col">Author</th>
+    <th scope="col">Created</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let post of (posts | searchByTitle: searchText);trackBy: trackByCreated" (click)="postSelected(post)">
+    <td>{{post.title}}</td>
+    <td>{{post.url}}</td>
+    <td>{{post.author}}</td>
+    <td>{{post.created_at | date:'medium'}}</td>
+  </tr>
+  </tbody>
+</table>
